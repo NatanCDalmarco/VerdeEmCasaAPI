@@ -1,6 +1,6 @@
 package com.verdeemcasa.api.Domain.Repositories;
 
-import VerdeEmCasa.Domain.Models.Praga;
+import com.verdeemcasa.api.Domain.Models.Praga;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
