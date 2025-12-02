@@ -9,11 +9,9 @@ import org.springframework.stereotype.Service;
 public class AuthorizationService implements UserDetailsService {
 
     private final UserService userService;
-    private final TechnicianService technicianService;
 
-    public AuthorizationService(UserService userService, TechnicianService technicianService) {
+    public AuthorizationService(UserService userService) {
         this.userService = userService;
-        this.technicianService = technicianService;
     }
 
 
@@ -22,10 +20,6 @@ public class AuthorizationService implements UserDetailsService {
         UserDetails user = userService.getByEmail(username);
         if (user != null) {
             return user;
-        }
-        UserDetails technician = technicianService.getByEmail(username);
-        if (technician != null) {
-            return technician;
         }
         throw new UsernameNotFoundException("User not found with email: " + username);
     }

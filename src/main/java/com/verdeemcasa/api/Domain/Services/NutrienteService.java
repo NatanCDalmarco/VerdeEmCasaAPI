@@ -1,12 +1,12 @@
 package com.verdeemcasa.api.Domain.Services;
 
-import VerdeEmCasa.Application.DTOs.NutrienteRequestDto;
-import VerdeEmCasa.Application.DTOs.NutrienteResponseDto;
-import VerdeEmCasa.Domain.Models.Nutriente;
-import VerdeEmCasa.Domain.Models.Plant;
-import VerdeEmCasa.Domain.Repositories.NutrienteRepository;
-import VerdeEmCasa.Domain.Repositories.PlantRepository;
-import VerdeEmCasa.Infra.Mapper.NutrienteMapper;
+import com.verdeemcasa.api.Application.DTOs.NutrienteRequestDto;
+import com.verdeemcasa.api.Application.DTOs.NutrienteResponseDto;
+import com.verdeemcasa.api.Domain.Models.Nutriente;
+import com.verdeemcasa.api.Domain.Models.Plant;
+import com.verdeemcasa.api.Domain.Repositories.NutrienteRepository;
+import com.verdeemcasa.api.Domain.Repositories.PlantRepository;
+import com.verdeemcasa.api.Infra.Mapper.NutrienteMapper;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 

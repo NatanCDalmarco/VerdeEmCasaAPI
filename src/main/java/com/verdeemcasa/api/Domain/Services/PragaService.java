@@ -1,12 +1,12 @@
 package com.verdeemcasa.api.Domain.Services;
 
-import VerdeEmCasa.Application.DTOs.PragaRequestDto;
-import VerdeEmCasa.Application.DTOs.PragaResponseDto;
-import VerdeEmCasa.Domain.Models.Plant;
-import VerdeEmCasa.Domain.Models.Praga;
-import VerdeEmCasa.Domain.Repositories.PlantRepository;
-import VerdeEmCasa.Domain.Repositories.PragaRepository;
-import VerdeEmCasa.Infra.Mapper.PragaMapper;
+import com.verdeemcasa.api.Application.DTOs.PragaRequestDto;
+import com.verdeemcasa.api.Application.DTOs.PragaResponseDto;
+import com.verdeemcasa.api.Domain.Models.Plant;
+import com.verdeemcasa.api.Domain.Models.Praga;
+import com.verdeemcasa.api.Domain.Repositories.PlantRepository;
+import com.verdeemcasa.api.Domain.Repositories.PragaRepository;
+import com.verdeemcasa.api.Infra.Mapper.PragaMapper;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 

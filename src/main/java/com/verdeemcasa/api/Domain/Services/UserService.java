@@ -1,10 +1,11 @@
 package com.verdeemcasa.api.Domain.Services;
 
-import VerdeEmCasa.Application.DTOs.UserRequestDto;
-import VerdeEmCasa.Application.DTOs.UserResponseDto;
-import VerdeEmCasa.Domain.Models.User;
-import VerdeEmCasa.Domain.Repositories.UserRepository;
-import VerdeEmCasa.Infra.Mapper.UserMapper;
+import com.verdeemcasa.api.Application.DTOs.UserRequestDto;
+import com.verdeemcasa.api.Application.DTOs.UserResponseDto;
+import com.verdeemcasa.api.Domain.Models.User;
+import com.verdeemcasa.api.Domain.Repositories.UserRepository;
+import com.verdeemcasa.api.Infra.Mapper.UserMapper;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
@@ -45,6 +46,10 @@ public class UserService {
         User user = userRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException("User not found"));
         return userMapper.toResponse(user);
+    }
+
+    public UserDetails getByEmail(String email) {
+        return userRepository.findByEmail(email);
     }
 
     public void delete(Long id) {
