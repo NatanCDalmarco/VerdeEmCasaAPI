@@ -6,7 +6,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Entity
-@Table(name = "nutriente") // Maps to 'nutriente' table in SQL
+@Table(name = "nutriente")
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
@@ -17,16 +17,15 @@ public class Nutriente {
     private Long id;
 
     @Column(nullable = false)
-    private String name; // maps to 'tipo_nutriente' (e.g., "Nitrogen", "NPK 10-10-10")
+    private String name;
 
     @Column(columnDefinition = "TEXT")
     private String description;
 
-    private String applicationFrequency; // maps to 'frequencia_aplicacao'
+    private String applicationFrequency;
 
-    private String dosage; // maps to 'dosagem'
+    private String dosage;
 
-    // Relationship: Specific nutrients for a specific Plant type
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "planta_id", nullable = false)
     private Plant plant;

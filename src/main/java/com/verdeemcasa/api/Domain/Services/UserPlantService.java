@@ -1,15 +1,15 @@
 package com.verdeemcasa.api.Domain.Services;
 
-import VerdeEmCasa.Application.DTOs.UserPlantRequestDto;
-import VerdeEmCasa.Application.DTOs.UserPlantResponseDto;
-import VerdeEmCasa.Domain.Models.Plant;
-import VerdeEmCasa.Domain.Models.User;
-import VerdeEmCasa.Domain.Models.UserPlant;
-import VerdeEmCasa.Domain.Models.Enums.WateringStatus;
-import VerdeEmCasa.Domain.Repositories.PlantRepository;
-import VerdeEmCasa.Domain.Repositories.UserPlantRepository;
-import VerdeEmCasa.Domain.Repositories.UserRepository;
-import VerdeEmCasa.Infra.Mapper.UserPlantMapper;
+import com.verdeemcasa.api.Application.DTOs.UserPlantRequestDto;
+import com.verdeemcasa.api.Application.DTOs.UserPlantResponseDto;
+import com.verdeemcasa.api.Domain.Models.Plant;
+import com.verdeemcasa.api.Domain.Models.User;
+import com.verdeemcasa.api.Domain.Models.UserPlant;
+import com.verdeemcasa.api.Domain.Models.Enums.WateringStatus;
+import com.verdeemcasa.api.Domain.Repositories.PlantRepository;
+import com.verdeemcasa.api.Domain.Repositories.UserPlantRepository;
+import com.verdeemcasa.api.Domain.Repositories.UserRepository;
+import com.verdeemcasa.api.Infra.Mapper.UserPlantMapper;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 

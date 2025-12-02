@@ -1,6 +1,6 @@
 package com.verdeemcasa.api.Domain.Models;
 
-import VerdeEmCasa.Domain.Models.Enums.WateringStatus;
+import com.verdeemcasa.api.Domain.Models.Enums.WateringStatus;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -19,26 +19,23 @@ public class UserPlant {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    // Personalização do Usuário
-    private String nickname; // "apelido" (ex: Minha Jiboia)
-    private String location; // "local" (ex: Sala)
-    private String customPhotoUrl; // foto personalizada
+    private String nickname;
+    private String location;
+    private String customPhotoUrl;
 
-    // Controle de Rega
-    private LocalDateTime lastWatered; // "ultima_rega"
-    private LocalDateTime nextWatering; // "proxima_rega" (Calculado)
+    private LocalDateTime lastWatered;
+    private LocalDateTime nextWatering;
 
     @Enumerated(EnumType.STRING)
-    private WateringStatus wateringStatus; // status_rega
+    private WateringStatus wateringStatus;
 
     private LocalDateTime addedAt = LocalDateTime.now();
 
-    // Relacionamentos
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "usuario_id", nullable = false)
     private User user;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "planta_id", nullable = false)
-    private Plant plant; // Referência ao catálogo para pegar info científica
+    private Plant plant;
 }

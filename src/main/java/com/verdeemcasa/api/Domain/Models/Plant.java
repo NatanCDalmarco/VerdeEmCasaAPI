@@ -1,6 +1,6 @@
 package com.verdeemcasa.api.Domain.Models;
 
-import VerdeEmCasa.Domain.Models.Enums.PlantDifficulty;
+import com.verdeemcasa.api.Domain.Models.Enums.PlantDifficulty;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -9,7 +9,7 @@ import lombok.NoArgsConstructor;
 import java.time.LocalDateTime;
 
 @Entity
-@Table(name = "plant") // Corresponds to 'planta' table in SQL
+@Table(name = "plant")
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
@@ -20,9 +20,9 @@ public class Plant {
     private Long id;
 
     @Column(nullable = false)
-    private String name; // nome_comum
+    private String name;
 
-    private String scientificName; // nome_cientifico
+    private String scientificName;
 
     @Column(columnDefinition = "TEXT")
     private String description;
@@ -30,13 +30,12 @@ public class Plant {
     private String imageUrl;
 
     @Enumerated(EnumType.STRING)
-    private PlantDifficulty difficulty; // FACIL, MEDIO, DIFICIL
+    private PlantDifficulty difficulty;
 
-    private String lightRequirements; // luz_necessaria (e.g., "Indireta", "Sombra")
+    private String lightRequirements;
 
-    private String waterFrequency; // frequencia_rega (Text description)
+    private String waterFrequency;
 
-    // Crucial for the algorithm: How many days between watering?
     private Integer wateringIntervalDays;
 
     private boolean active = true;
