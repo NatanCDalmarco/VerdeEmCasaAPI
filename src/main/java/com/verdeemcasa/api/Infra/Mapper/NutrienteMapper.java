@@ -1,15 +1,15 @@
 package com.verdeemcasa.api.Infra.Mapper;
 
-import VerdeEmCasa.Application.DTOs.NutrienteRequestDto;
-import VerdeEmCasa.Application.DTOs.NutrienteResponseDto;
-import VerdeEmCasa.Domain.Models.Nutriente;
+import com.verdeemcasa.api.Application.DTOs.NutrienteRequestDto;
+import com.verdeemcasa.api.Application.DTOs.NutrienteResponseDto;
+import com.verdeemcasa.api.Domain.Models.Nutriente;
 import org.mapstruct.*;
 
 @Mapper(componentModel = "Spring")
 public interface NutrienteMapper {
 
     @Mapping(target = "id", ignore = true)
-    @Mapping(target = "plant", ignore = true) // Handled in Service
+    @Mapping(target = "plant", ignore = true)
     Nutriente toEntity(NutrienteRequestDto dto);
 
     @Mapping(source = "plant.id", target = "plantId")

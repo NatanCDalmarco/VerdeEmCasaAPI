@@ -1,8 +1,8 @@
 package com.verdeemcasa.api.Infra.Mapper;
 
-import VerdeEmCasa.Application.DTOs.UserPlantRequestDto;
-import VerdeEmCasa.Application.DTOs.UserPlantResponseDto;
-import VerdeEmCasa.Domain.Models.UserPlant;
+import com.verdeemcasa.api.Application.DTOs.UserPlantRequestDto;
+import com.verdeemcasa.api.Application.DTOs.UserPlantResponseDto;
+import com.verdeemcasa.api.Domain.Models.UserPlant;
 import org.mapstruct.*;
 
 @Mapper(componentModel = "Spring")
