@@ -20,7 +20,6 @@ public class NutrienteController {
         this.nutrienteService = nutrienteService;
     }
 
-    // Example: GET /nutrientes/plant/5 -> Returns fertilizer info for Plant #5
     @GetMapping("/plant/{plantId}")
     public ResponseEntity<List<NutrienteResponseDto>> getByPlant(@PathVariable Long plantId) {
         return ResponseEntity.ok(nutrienteService.getAllByPlant(plantId));

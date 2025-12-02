@@ -1,8 +1,8 @@
 package com.verdeemcasa.api.Application.Controllers;
 
-import VerdeEmCasa.Application.DTOs.PragaRequestDto;
-import VerdeEmCasa.Application.DTOs.PragaResponseDto;
-import VerdeEmCasa.Domain.Services.PragaService;
+import com.verdeemcasa.api.Application.DTOs.PragaRequestDto;
+import com.verdeemcasa.api.Application.DTOs.PragaResponseDto;
+import com.verdeemcasa.api.Domain.Services.PragaService;
 import jakarta.validation.Valid;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -25,8 +25,6 @@ public class PragaController {
         return ResponseEntity.ok(pragaService.getAll());
     }
 
-    // New Endpoint: Get pests specific to a plant
-    // Example: GET /pragas/plant/1
     @GetMapping("/plant/{plantId}")
     public ResponseEntity<List<PragaResponseDto>> getByPlant(@PathVariable Long plantId) {
         return ResponseEntity.ok(pragaService.getAllByPlant(plantId));

@@ -1,6 +1,6 @@
 package com.verdeemcasa.api.Application.DTOs;
 
-import VerdeEmCasa.Domain.Models.Enums.PlantDifficulty;
+import com.verdeemcasa.api.Domain.Models.Enums.PlantDifficulty;
 
 public record PlantResponseDto(
         Long id,

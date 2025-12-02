@@ -1,6 +1,6 @@
 package com.verdeemcasa.api.Application.DTOs;
 
-import VerdeEmCasa.Domain.Models.Enums.WateringStatus;
+import com.verdeemcasa.api.Domain.Models.Enums.WateringStatus;
 import java.time.LocalDateTime;
 
 public record UserPlantResponseDto(

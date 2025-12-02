@@ -1,11 +1,10 @@
 package com.verdeemcasa.api.Application.DTOs;
 
-import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.NotBlank;
 
 public record LoginDto(
-        @NotNull
+        @NotBlank
         String login,
-        @NotNull
+        @NotBlank
         String password
-) {
-}
+) {}

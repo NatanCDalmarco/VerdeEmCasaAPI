@@ -1,8 +1,8 @@
 package com.verdeemcasa.api.Application.Controllers;
 
-import VerdeEmCasa.Application.DTOs.UserRequestDto;
-import VerdeEmCasa.Application.DTOs.UserResponseDto;
-import VerdeEmCasa.Domain.Services.UserService;
+import com.verdeemcasa.api.Application.DTOs.UserRequestDto;
+import com.verdeemcasa.api.Application.DTOs.UserResponseDto;
+import com.verdeemcasa.api.Domain.Services.UserService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.util.UriComponentsBuilder;

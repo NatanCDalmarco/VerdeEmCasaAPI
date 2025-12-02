@@ -1,8 +1,8 @@
 package com.verdeemcasa.api.Application.Controllers;
 
-import VerdeEmCasa.Application.DTOs.PlantRequestDto;
-import VerdeEmCasa.Application.DTOs.PlantResponseDto;
-import VerdeEmCasa.Domain.Services.PlantService;
+import com.verdeemcasa.api.Application.DTOs.PlantRequestDto;
+import com.verdeemcasa.api.Application.DTOs.PlantResponseDto;
+import com.verdeemcasa.api.Domain.Services.PlantService;
 import jakarta.validation.Valid;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -33,7 +33,6 @@ public class PlantController {
         return ResponseEntity.ok(plantService.getById(id));
     }
 
-    // Admin only endpoint (Security config should restrict this)
     @PostMapping
     public ResponseEntity<PlantResponseDto> create(@RequestBody @Valid PlantRequestDto data, UriComponentsBuilder uriBuilder) {
         var plant = plantService.create(data);

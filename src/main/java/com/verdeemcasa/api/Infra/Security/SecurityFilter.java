@@ -1,6 +1,6 @@
 package com.verdeemcasa.api.Infra.Security;
 
-import VerdeEmCasa.Domain.Repositories.UserRepository;
+import com.verdeemcasa.api.Domain.Repositories.UserRepository; // Import Corrigido
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
@@ -17,7 +17,7 @@ import java.io.IOException;
 public class SecurityFilter extends OncePerRequestFilter {
 
     private final TokenService tokenService;
-    private final UserRepository userRepository; // Changed from TechnicianRepository
+    private final UserRepository userRepository;
 
     public SecurityFilter(TokenService tokenService, UserRepository userRepository) {
         this.tokenService = tokenService;

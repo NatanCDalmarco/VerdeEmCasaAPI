@@ -1,8 +1,8 @@
 package com.verdeemcasa.api.Application.Controllers;
 
-import VerdeEmCasa.Application.DTOs.UserPlantRequestDto;
-import VerdeEmCasa.Application.DTOs.UserPlantResponseDto;
-import VerdeEmCasa.Domain.Services.UserPlantService;
+import com.verdeemcasa.api.Application.DTOs.UserPlantRequestDto;
+import com.verdeemcasa.api.Application.DTOs.UserPlantResponseDto;
+import com.verdeemcasa.api.Domain.Services.UserPlantService;
 import jakarta.validation.Valid;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -20,15 +20,11 @@ public class UserPlantController {
         this.userPlantService = userPlantService;
     }
 
-    // Listar todas as plantas de um usuário
-    // Ex: GET /my-plants/user/1
     @GetMapping("/user/{userId}")
     public ResponseEntity<List<UserPlantResponseDto>> getMyPlants(@PathVariable Long userId) {
         return ResponseEntity.ok(userPlantService.getUserPlants(userId));
     }
 
-    // Adicionar planta para um usuário
-    // Ex: POST /my-plants/user/1
     @PostMapping("/user/{userId}")
     public ResponseEntity<UserPlantResponseDto> addPlant(
             @PathVariable Long userId,
@@ -40,8 +36,6 @@ public class UserPlantController {
         return ResponseEntity.created(uri).body(plant);
     }
 
-    // Ação de REGAR a planta (Botão "Reguei" do HTML)
-    // Ex: PATCH /my-plants/1/water
     @PatchMapping("/{id}/water")
     public ResponseEntity<UserPlantResponseDto> waterPlant(@PathVariable Long id) {
         return ResponseEntity.ok(userPlantService.waterPlant(id));

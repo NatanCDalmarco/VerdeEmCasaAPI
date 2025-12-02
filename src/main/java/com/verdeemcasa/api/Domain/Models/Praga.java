@@ -25,8 +25,6 @@ public class Praga {
     @Column(columnDefinition = "TEXT")
     private String treatment;
 
-    // Relationship: Many Pests belong to One Plant type
-    // Make sure you have the 'Plant' entity created (the Catalog one)
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "planta_id", nullable = false)
     private Plant plant;

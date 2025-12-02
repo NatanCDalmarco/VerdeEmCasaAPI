@@ -28,15 +28,12 @@ public class NutrienteService {
 
     @Transactional
     public NutrienteResponseDto create(NutrienteRequestDto dto) {
-        // 1. Validate Plant existence
         Plant plant = plantRepository.findById(dto.plantId())
                 .orElseThrow(() -> new RuntimeException("Plant not found with ID: " + dto.plantId()));
 
-        // 2. Map and Set
         Nutriente nutriente = nutrienteMapper.toEntity(dto);
         nutriente.setPlant(plant);
 
-        // 3. Save
         return nutrienteMapper.toResponse(nutrienteRepository.save(nutriente));
     }
 
