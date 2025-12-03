@@ -35,7 +35,6 @@ public class PlantService {
                 .collect(Collectors.toList());
     }
 
-    // Search logic for the catalog page
     public List<PlantResponseDto> search(String query) {
         return plantRepository.findByNameContainingIgnoreCase(query).stream()
                 .map(plantMapper::toResponse)
@@ -59,7 +58,6 @@ public class PlantService {
 
     @Transactional
     public void delete(Long id) {
-        // Soft delete is better for Catalog items to avoid breaking user history
         Plant plant = plantRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException("Plant not found"));
         plant.setActive(false);
